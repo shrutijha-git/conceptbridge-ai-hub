@@ -1,0 +1,9 @@
+Third Normal Form (3NF)
+
+For each non-trivial functional dependency X -> A, a relation is in 3NF if X is a superkey or A is a prime attribute (part of a candidate key).
+
+For Student(StudentID, DeptID, DeptName), assume StudentID is the only candidate key. StudentID determines DeptID; DeptID determines DeptName. DeptID is not a superkey and DeptName is non-prime. DeptName therefore depends transitively on StudentID, violating 3NF.
+
+Decompose into Student(StudentID, DeptID) and Department(DeptID, DeptName). The department name is then stored with its determinant.
+
+Do not confuse partial dependency (on a proper subset of a composite candidate key) with transitive dependency (through an intermediate determinant).
